@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest          # Base image to be used for the GitHub runner
     env:                            # List of environment variables
       directory: api/CustomerAPI    # the path of the Customer API 
-      name: lizdeploy221116         # Your POSTFIX
+      name1: lizjoy                 # Your POSTFIX
+      name: lizdeploy221116
     steps:
     - uses: actions/checkout@main       # Checkout the code to the GitHub runner 
     - name: Log into Azure              # Log into Azure using the service credentials provided earlier
@@ -22,4 +23,4 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
-          az acr build --registry acr${{ env.name }}.azurecr.io -g rg-${{ env.name }} --image customerapi:${{ github.run_number }} . -f api/CustomerAPI/Dockerfile 
+          az acr build --registry acr${{ env.name }}.azurecr.io -g rg-${{ env.name1 }} --image customerapi:${{ github.run_number }} . -f api/CustomerAPI/Dockerfile 
