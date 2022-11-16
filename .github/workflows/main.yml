@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest          # Base image to be used for the GitHub runner
     env:                            # List of environment variables
       directory: api/CustomerAPI    # the path of the Customer API 
-      name: batkar                  # Your POSTFIX
+      name: lizdeploy221116         # Your POSTFIX
     steps:
     - uses: actions/checkout@main       # Checkout the code to the GitHub runner 
     - name: Log into Azure              # Log into Azure using the service credentials provided earlier
